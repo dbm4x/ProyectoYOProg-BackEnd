@@ -27,6 +27,5 @@ public class Acercade {
 	public Boolean visible;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
     private Acercade acercade;	
 }

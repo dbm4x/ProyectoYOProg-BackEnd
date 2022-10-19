@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.monarca.portafolio.security.jwt.AuthEntryPointJwt;
 import com.monarca.portafolio.security.jwt.AuthTokenFilter;
 import com.monarca.portafolio.security.service.UserDetailsServiceImpl;
-
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
 
 @Configuration
@@ -62,7 +62,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       .authorizeRequests().antMatchers("/api/auth/**").permitAll()
       .antMatchers("/api/ver/**").permitAll()
       .anyRequest().authenticated();
-
+    http.headers().addHeaderWriter(
+            new StaticHeadersWriter("Access-Control-Allow-Origin", "*"));
     http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
   }
 }

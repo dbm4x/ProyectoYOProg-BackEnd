@@ -22,8 +22,9 @@ import com.monarca.portafolio.security.jwt.JwtUtils;
 import com.monarca.portafolio.security.service.UserDetailsImpl;
 
 /**/
-@CrossOrigin(origins = "https://angular-70dcf.firebaseapp.com", maxAge = 3600)
+
 @RestController
+@CrossOrigin
 @RequestMapping("/api/auth")
 public class AuthController {
 	

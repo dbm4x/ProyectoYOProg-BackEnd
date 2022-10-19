@@ -30,8 +30,8 @@ import com.monarca.portafolio.service.IPersonaService;
 import com.monarca.portafolio.service.ISkillService;
 import com.monarca.portafolio.service.IProyectoService;
 
-@CrossOrigin(origins = "https://angular-70dcf.firebaseapp.com", maxAge = 3600)
 @RestController
+@CrossOrigin(origins = "https://angular-70dcf.firebaseapp.com", maxAge = 3600)
 @RequestMapping("/api/")
 
 public class Controller {

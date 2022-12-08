@@ -31,7 +31,8 @@ import lombok.Setter;
 @Entity
 public class Proyecto {
 
-	@Id 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long id;
 	public String titulo;
 	public String subtitulo;

@@ -1,3 +1,3 @@
 FROM openjdk:8-alpine
-MAINTAINER emaaristimuno
-ENTRYPOINT ["java", "-jar", "/portafolio-0.0.1-SNAPSHOT.jar"]
+COPY --from=build target/portafolio-0.0.1-SNAPSHOT.jar /usr/share/portafolio-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/portafolio-0.0.1-SNAPSHOT.jar"]
